@@ -18,8 +18,9 @@ class ViewController: UIViewController {
         
         if let apiUrl = UserDefaults.init(suiteName: "group.com.ulrichlehner.zoomood")?.string(forKey: "api_url")  {
             //if apiUrl != nil {
-            print(apiUrl)
+            // print(apiUrl)
             labelUserDefaults.text = apiUrl
+            textFieldApiUrl.text = apiUrl
             //}
         } else {
             labelUserDefaults.text = "[not set]"
