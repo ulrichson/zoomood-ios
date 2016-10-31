@@ -17,6 +17,8 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
         self.extensionContext = context
         
+        // registerSettingsBundle()
+        
         for item in context.inputItems as! [NSExtensionItem] {
             //print(item.debugDescription)
             if let attachments = item.attachments {
@@ -37,7 +39,12 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
                                 
                                 print("image encoded to base64")
                                 //Ulrichs-MacBook-Pro.local
-                                let zoomoodUrl = URL(string: "http://192.168.0.13:3000/media")
+                                var zoomoodUrl = URL(string: "http://192.168.0.13:3000/media")
+                                
+                                if let url = UserDefaults.init(suiteName: "group.com.ulrichlehner.zoomood")?.string(forKey: "api_url") {
+                                    zoomoodUrl = URL(string: "http://" + url + "/media")
+                                }
+                                
                                 var request = URLRequest(url: zoomoodUrl!)
                                 
                                 request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -128,6 +135,12 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         
         // Don't hold on to this after we finished with it.
         self.extensionContext = nil
+    }
+    
+    func registerSettingsBundle(){
+        let appDefaults = [String:AnyObject]()
+        UserDefaults.standard.register(defaults: appDefaults)
+        //UserDefaults.init(suiteName: "group.com.ulrichlehner.zoomood")?.register(defaults: appDefaults)
     }
     
 }

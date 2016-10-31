@@ -15,6 +15,7 @@
 		1B8B9B521DC64FDA007FB497 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B9B511DC64FDA007FB497 /* ActionRequestHandler.swift */; };
 		1B8B9B541DC64FDA007FB497 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B9B531DC64FDA007FB497 /* Action.js */; };
 		1B8B9B581DC64FDA007FB497 /* Send to Whiteboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1B8B9B4F1DC64FDA007FB497 /* Send to Whiteboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1BBD10541DC75B2500665739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD10531DC75B2500665739 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,9 @@
 		1B8B9B511DC64FDA007FB497 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
 		1B8B9B531DC64FDA007FB497 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		1B8B9B551DC64FDA007FB497 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BBD10531DC75B2500665739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BBD10581DC770CE00665739 /* Zoomood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zoomood.entitlements; sourceTree = "<group>"; };
+		1BBD10591DC7727800665739 /* Send to Whiteboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Send to Whiteboard.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		1B8B9B381DC64FA0007FB497 /* Zoomood */ = {
 			isa = PBXGroup;
 			children = (
+				1BBD10581DC770CE00665739 /* Zoomood.entitlements */,
 				1B8B9B391DC64FA0007FB497 /* AppDelegate.swift */,
 				1B8B9B3B1DC64FA0007FB497 /* ViewController.swift */,
 				1B8B9B3D1DC64FA0007FB497 /* Main.storyboard */,
@@ -107,9 +112,11 @@
 		1B8B9B501DC64FDA007FB497 /* Send to Whiteboard */ = {
 			isa = PBXGroup;
 			children = (
+				1BBD10591DC7727800665739 /* Send to Whiteboard.entitlements */,
 				1B8B9B511DC64FDA007FB497 /* ActionRequestHandler.swift */,
 				1B8B9B531DC64FDA007FB497 /* Action.js */,
 				1B8B9B551DC64FDA007FB497 /* Info.plist */,
+				1BBD10531DC75B2500665739 /* Assets.xcassets */,
 			);
 			path = "Send to Whiteboard";
 			sourceTree = "<group>";
@@ -165,11 +172,23 @@
 				TargetAttributes = {
 					1B8B9B351DC64F9F007FB497 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 935PZV3B9Y;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					1B8B9B4E1DC64FDA007FB497 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 935PZV3B9Y;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -207,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBD10541DC75B2500665739 /* Assets.xcassets in Resources */,
 				1B8B9B541DC64FDA007FB497 /* Action.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +379,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Zoomood/Zoomood.entitlements;
+				DEVELOPMENT_TEAM = 935PZV3B9Y;
 				INFOPLIST_FILE = Zoomood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulrichlehner.Zoomood;
@@ -372,6 +394,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Zoomood/Zoomood.entitlements;
+				DEVELOPMENT_TEAM = 935PZV3B9Y;
 				INFOPLIST_FILE = Zoomood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ulrichlehner.Zoomood;
@@ -383,6 +407,9 @@
 		1B8B9B5A1DC64FDA007FB497 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = ActionIcon;
+				CODE_SIGN_ENTITLEMENTS = "Send to Whiteboard/Send to Whiteboard.entitlements";
+				DEVELOPMENT_TEAM = 935PZV3B9Y;
 				INFOPLIST_FILE = "Send to Whiteboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ulrichlehner.Zoomood.Send-to-Whiteboard";
@@ -395,6 +422,9 @@
 		1B8B9B5B1DC64FDA007FB497 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = ActionIcon;
+				CODE_SIGN_ENTITLEMENTS = "Send to Whiteboard/Send to Whiteboard.entitlements";
+				DEVELOPMENT_TEAM = 935PZV3B9Y;
 				INFOPLIST_FILE = "Send to Whiteboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ulrichlehner.Zoomood.Send-to-Whiteboard";
@@ -423,6 +453,7 @@
 				1B8B9B4A1DC64FA0007FB497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B8B9B591DC64FDA007FB497 /* Build configuration list for PBXNativeTarget "Send to Whiteboard" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +462,7 @@
 				1B8B9B5B1DC64FDA007FB497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
