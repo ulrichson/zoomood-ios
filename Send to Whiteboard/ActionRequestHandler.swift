@@ -26,7 +26,6 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
                     if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeImage as String) {
                         itemProvider.loadItem(forTypeIdentifier: kUTTypeImage as String, options: nil, completionHandler: {(item, error) in
                             print("item loaded")
-                            //                                print(item.debugDescription)
                             if let imageURL = item as? NSURL {
                                 print("url found")
                                 let imageData = NSData(contentsOf: imageURL as URL)
